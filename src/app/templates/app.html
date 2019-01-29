@@ -1,0 +1,50 @@
+<mat-drawer-container class="container" autosize>    
+    <mat-drawer class="sidenav-container" mode="side" opened="true">    
+        <div class="sidenav" [ngClass]="{'collapse':showMenu === false}" >
+            <button (click)="showMenu = !showMenu" mat-raised-button>
+                <i class="fa" [ngClass]="{'fa-chevron-left':showMenu === true, 'fa-chevron-right': showMenu === false}" ></i>
+            </button>        
+            <ul class="menu">
+                <li>
+                    <i class="fa fa-bars"><span *ngIf="showMenu">Menu item</span></i>
+                </li>
+                <li>
+                    <i class="fa fa-bars"><span *ngIf="showMenu">Menu item</span></i>
+                </li>
+                <li>
+                    <i class="fa fa-bars"><span *ngIf="showMenu">Menu item</span></i>
+                </li>
+            </ul>        
+        </div>
+        <div class="sidenav2" [ngClass]="{'collapse':showSubMenu === false}" >
+            <button (click)="showSubMenu = !showSubMenu" mat-raised-button>
+                <i class="fa" [ngClass]="{'fa-chevron-left':showSubMenu === true, 'fa-chevron-right': showSubMenu === false}" ></i>
+            </button>       
+            <ul class="sub-menu">
+                <li>
+                    <i class="fa fa-bars"><span *ngIf="showSubMenu">Submenu item</span></i>
+                </li>
+                <li>
+                    <i class="fa fa-bars"><span *ngIf="showSubMenu">Submenu item</span></i>
+                </li>
+                <li>
+                    <i class="fa fa-bars"><span *ngIf="showSubMenu">Submenu item</span></i>
+                </li>
+            </ul>            
+        </div>        
+    </mat-drawer>    
+    
+    <mat-drawer-content>
+        <div class="sidenav-content">
+            <div class="header">
+                <h1>Heading</h1>
+            </div>
+            <div class="content">
+                <p *ngFor="let content of fillerContent">{{content}}</p>
+            </div>        
+        </div>
+    </mat-drawer-content>
+    
+</mat-drawer-container>
+      
+      
